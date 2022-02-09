@@ -3,11 +3,11 @@ Die App beinhaltet verschiedene Katzenrassen und eine Detailansicht der einzelne
 In der Detailansicht können die Katzen bewertet werden. 
 
 ## Ausführen der Datei: 
-### Step 1
-Download or clone this repo
+### Schritt 1
+Lade das Repo herunter oder Klone es 
 
-### Step 2 
-Direct to tht repo in your command window and run:
+### Schritt 2 
+
 ```
 flutter run --release  
 ```
