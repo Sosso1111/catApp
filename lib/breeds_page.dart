@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 import 'models/palette.dart';
 
 class BreedsPage extends StatefulWidget {
-  const BreedsPage ({Key? key}) : super(key: key);
+  const BreedsPage({Key? key}) : super(key: key);
 
   @override
   State<BreedsPage> createState() => _BreedsPageState();
@@ -26,7 +26,7 @@ class _BreedsPageState extends State<BreedsPage> {
     if (response.statusCode == 200) {
       List<Breed> breeds = [];
       var body = jsonDecode(response.body) as List<dynamic>;
-      for (var value in body){
+      for (var value in body) {
         breeds.add(Breed.fromJson(value));
       }
       return breeds;
@@ -37,28 +37,29 @@ class _BreedsPageState extends State<BreedsPage> {
 
   @override
   void initState() {
-    fetchBreeds().then((breeds){
-      setState((){
+    fetchBreeds().then((breeds) {
+      setState(() {
         _breeds = breeds;
       });
     });
     super.initState();
   }
 
-  Widget buildListView(){
+  Widget buildListView() {
     return ListView.separated(
-      separatorBuilder: (context, index) => const Divider(
-        color: Color(0xFF355855),
-            thickness:0.5,
-        height:15,
-      ),
+        separatorBuilder: (context, index) => const Divider(
+              color: Color(0xFF355855),
+              thickness: 0.5,
+              height: 15,
+            ),
         itemCount: _breeds.length,
         itemBuilder: (BuildContext context, int index) {
-
           return ListTile(
-              title: Text(_breeds[index].name,),
+              title: Text(
+                _breeds[index].name,
+              ),
               trailing: Icon(Icons.chevron_right),
-              onTap: (){
+              onTap: () {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -66,15 +67,13 @@ class _BreedsPageState extends State<BreedsPage> {
                 );
               });
         }).build(context);
-
   }
 
   @override
-  Widget build(BuildContext context){
-    return Scaffold (
+  Widget build(BuildContext context) {
+    return Scaffold(
       appBar: AppBar(
         title: const Text("Breeds"),
-
       ),
       body: buildListView(),
     );

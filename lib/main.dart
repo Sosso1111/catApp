@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'breeds_page.dart';
 import 'models/palette.dart';
 
-
 void main() {
   runApp(const CatApp());
 }
@@ -23,5 +22,4 @@ class CatApp extends StatelessWidget {
       },
     );
   }
-
 }

@@ -6,13 +6,12 @@ class Image {
 
   Image(
       {required this.id,
-        required this.width,
-        required this.height,
-        required this.url
-      });
+      required this.width,
+      required this.height,
+      required this.url});
 
-  factory Image.fromJson(Map<String, dynamic> json){
-    if (!json.containsKey('id')){
+  factory Image.fromJson(Map<String, dynamic> json) {
+    if (!json.containsKey('id')) {
       return Image(id: "", width: 0, height: 0, url: "");
     }
 
@@ -20,7 +19,6 @@ class Image {
         id: json['id'],
         width: json['width'],
         height: json['height'],
-        url: json['url']
-    );
+        url: json['url']);
   }
 }

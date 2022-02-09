@@ -33,7 +33,6 @@ class BreedPage extends StatelessWidget {
         .then((response) => print(response.body));
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,95 +40,86 @@ class BreedPage extends StatelessWidget {
           title: Text(_breed.name),
         ),
         body: Center(
-            child: ListView(children: [
-          Row(children: [
-            Flexible(
-                child: Padding(
-                    padding: const EdgeInsets.all(10),
-                    child: _breed.image != null
-                        ? Image.network(
-                            _breed.image!.url,
-                            fit: BoxFit.cover,
-                          )
-                        : Image.asset('placeholder.jpg', fit: BoxFit.cover)))
-          ]),
-          SizedBox(height: 20),
-          Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            CircleAvatar(
-                radius: 40,
-                backgroundColor: const Color(0xFF9CAC75),
-                child: IconButton(
-                  onPressed: upvote,
-                  color: Colors.black54,
-                  padding: const EdgeInsets.all(20),
-                  iconSize: 30,
-                  icon: const Icon(Icons.thumb_up),
-                )),
-            const SizedBox(width: 70),
-            CircleAvatar(
-                radius: 40,
-                backgroundColor: const Color(0xFF8B5358),
-                child: IconButton(
-                  onPressed: downvote,
-                  color: Colors.black54,
-                  padding: const EdgeInsets.all(20),
-                  iconSize: 30,
-                  icon: const Icon(Icons.thumb_down),
-                ))
-          ]),
-          const SizedBox(height: 50),
-          Row(children: [
-            Expanded(
-                child: Card(
-              child: DataTable(
-                  headingRowColor: MaterialStateProperty.resolveWith(
-                          (states) => Colors.blueGrey.shade600,
-                  ),
-
-                  columns:[
-                    DataColumn(label: Text('Property')),
-                    DataColumn(label: Text('Value')),
-                  ],
-                  rows: [
-                    DataRow(cells: [
-                      DataCell(Text('ID')),
-                      DataCell(Text(_breed.id))]),
-                    DataRow(cells: [
-                      DataCell(Text('Name')),
-                      DataCell(Text(_breed.name))]),
-                    DataRow(cells: [
-                      DataCell(Text('Temperamant')),
-                      DataCell(Text(_breed.temperament))]),
-                    DataRow(cells: [
-                      DataCell(Text('Life Span')),
-                      DataCell(Text(_breed.life_span!))
-                    ]),
-                    DataRow(cells: [
-                      DataCell(Text('Alt Names')),
-                      DataCell(Text(_breed.alt_names!))
-                    ]),
-                    DataRow(cells: [
-                      DataCell(Text('Wikipedia')),
-                      DataCell(Text(_breed.wikipedia_url!))
-                    ]),
-                    DataRow(cells: [
-                      DataCell(Text('Origin')),
-                      DataCell(Text(_breed.origin!))
-                    ]),
-
-
-                  ]
-
-              )
-    )
-
-
-
-
-
-
-
-               )],
+          child: ListView(children: [
+            Row(children: [
+              Flexible(
+                  child: Padding(
+                      padding: const EdgeInsets.all(10),
+                      child: _breed.image != null
+                          ? Image.network(
+                              _breed.image!.url,
+                              fit: BoxFit.cover,
+                            )
+                          : Image.asset('placeholder.jpg', fit: BoxFit.cover)))
+            ]),
+            SizedBox(height: 20),
+            Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+              CircleAvatar(
+                  radius: 40,
+                  backgroundColor: const Color(0xFF9CAC75),
+                  child: IconButton(
+                    onPressed: upvote,
+                    color: Colors.black54,
+                    padding: const EdgeInsets.all(20),
+                    iconSize: 30,
+                    icon: const Icon(Icons.thumb_up),
+                  )),
+              const SizedBox(width: 70),
+              CircleAvatar(
+                  radius: 40,
+                  backgroundColor: const Color(0xFF8B5358),
+                  child: IconButton(
+                    onPressed: downvote,
+                    color: Colors.black54,
+                    padding: const EdgeInsets.all(20),
+                    iconSize: 30,
+                    icon: const Icon(Icons.thumb_down),
+                  ))
+            ]),
+            const SizedBox(height: 50),
+            Row(
+              children: [
+                Expanded(
+                    child: Card(
+                        child: DataTable(
+                            headingRowColor: MaterialStateProperty.resolveWith(
+                              (states) => Colors.blueGrey.shade600,
+                            ),
+                            columns: [
+                      DataColumn(label: Text('Property')),
+                      DataColumn(label: Text('Value')),
+                    ],
+                            rows: [
+                      DataRow(cells: [
+                        DataCell(Text('ID')),
+                        DataCell(Text(_breed.id))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('Name')),
+                        DataCell(Text(_breed.name))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('Temperamant')),
+                        DataCell(Text(_breed.temperament))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('Life Span')),
+                        DataCell(Text(_breed.life_span ?? "N/A"))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('Alt Names')),
+                        DataCell(Text(_breed.alt_names ?? "N/A"))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('Wikipedia')),
+                        DataCell(Text(_breed.wikipedia_url ?? "N/A"))
+                      ]),
+                      DataRow(cells: [
+                        DataCell(Text('Origin')),
+                        DataCell(Text(_breed.origin ?? "N/A"))
+                      ]),
+                    ])))
+              ],
             )
           ]),
         ));

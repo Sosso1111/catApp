@@ -5,11 +5,11 @@ class Breed {
   final String name;
   final String temperament;
   final String? life_span;
- final String? alt_names;
-final String? wikipedia_url;
- final String? origin;
- final String? weight_imperial;
- final int? experimental;
+  final String? alt_names;
+  final String? wikipedia_url;
+  final String? origin;
+  final String? weight_imperial;
+  final int? experimental;
   final int? hairless;
   final int? natural;
   final int? rare;
@@ -33,49 +33,48 @@ final String? wikipedia_url;
   final Image? image;
 
   Breed(
-      { required this.id,
-        required this.name,
-        required this.temperament,
-        required this.life_span,
-       required this.alt_names,
-        required this.wikipedia_url,
-  required this.origin,
-    required this.weight_imperial,
-        required this.experimental,
-  required this.hairless,
-        required this.natural,
-        required this.rare,
-        required this.rex,
-        required this.suppress_tail,
-        required this.short_legs,
-        required this.hypoallergenic,
-        required this.adaptability,
-        required this.affection_level,
-        required this.country_code,
-        required this.child_friendly,
-        required this.dog_friendly,
-        required this.energy_level,
-        required this.grooming,
-        required this.health_issues,
-        required this.intelligence,
-        required this.shedding_level,
-        required this.social_needs,
-        required this.stranger_friendly,
-        required this.vocalisation,
-       required this.image}
-      );
+      {required this.id,
+      required this.name,
+      required this.temperament,
+      required this.life_span,
+      required this.alt_names,
+      required this.wikipedia_url,
+      required this.origin,
+      required this.weight_imperial,
+      required this.experimental,
+      required this.hairless,
+      required this.natural,
+      required this.rare,
+      required this.rex,
+      required this.suppress_tail,
+      required this.short_legs,
+      required this.hypoallergenic,
+      required this.adaptability,
+      required this.affection_level,
+      required this.country_code,
+      required this.child_friendly,
+      required this.dog_friendly,
+      required this.energy_level,
+      required this.grooming,
+      required this.health_issues,
+      required this.intelligence,
+      required this.shedding_level,
+      required this.social_needs,
+      required this.stranger_friendly,
+      required this.vocalisation,
+      required this.image});
   factory Breed.fromJson(Map<String, dynamic> json) {
     return Breed(
         id: json['id'],
         name: json['name'],
-        temperament: json ['temperament'],
-        life_span: json['life_span'] ,
-       alt_names:json['alt_names'],
-        wikipedia_url:json['wikipedia_url'],
-        origin:json['origin'],
+        temperament: json['temperament'],
+        life_span: json['life_span'],
+        alt_names: json['alt_names'],
+        wikipedia_url: json['wikipedia_url'],
+        origin: json['origin'],
         weight_imperial: json['weight_imperial'],
-        experimental:json['experimental'],
-        hairless:json['hairless'],
+        experimental: json['experimental'],
+        hairless: json['hairless'],
         natural: json['natural'],
         rare: json['rare'],
         rex: json['rex'],
@@ -95,9 +94,7 @@ final String? wikipedia_url;
         social_needs: json['social_needs'],
         stranger_friendly: json['stranger_friendly'],
         vocalisation: json['vocalisation'],
-
         image:
-        json.containsKey('image') ? Image.fromJson(json['image']) : null);
+            json.containsKey('image') ? Image.fromJson(json['image']) : null);
   }
 }
-

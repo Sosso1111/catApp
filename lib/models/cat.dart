@@ -1,1 +1,1 @@
-class Cat{}
+class Cat {}
