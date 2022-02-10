@@ -13,22 +13,22 @@ flutter run --release
 ```
 
 ## Aufgabe 3 
-1. Fehlerfälle: 
+### Fehlerfälle: 
 * Renderflex der Bilder
-* Abruf der Daten aus der API -> NUll values vorhande, App crahst wenn NULL wert vorhanden 
+* Abruf der Daten aus der API -> NULL values vorhanden, App crasht wenn NULL wert vorhanden 
 * verschiedenen Datentypen vorhanden 
 * Skalierbarkeit der App 
-2.  Persistenz: 
-* Daten könnten Lokal in Datenbank gespeichert werden / in Cache der dann bei der Offline Nutzung aufgrufen wird 
-3. Lokalisierung 
+### Persistenz: 
+* Daten könnten Lokal in Datenbanken gespeichert werden / in Cache der dann bei der Offline Nutzung aufgrufen wird 
+### Lokalisierung 
 * UX-Desing beachten -> Sichtbarkeit von Texten kann eingeschränkt sein/ Wortlängen unterschiedlich groß -> Responsive Design 
 * Leserichtung, Farbsymbolik, Externe Links, Datumsanzeige 
 * Mit Piktogrammen arbeiten 
 * Wichtig für die Akzeptanz der Nutzer 
-4. Wichtigkeit der Usability sowie Barrierefreiheit
+### Wichtigkeit der Usability sowie Barrierefreiheit
 * Größere Nutzergruppen werden erreicht -> kein Nutzer wird "ausgegrenzt" -> evtl. Wettbewerbsvorteil 
 * Uneingeschränkte Nutzung der App 
-* Durch Intuitive Bedienung der App wird ein schneller Einstieg der Usre ermöglicht -> Interesse bleibt vorhanden 
+* Durch Intuitive Bedienung der App wird ein schneller Einstieg der User ermöglicht -> Interesse bleibt vorhanden 
 
 * Texte vorpsrechen lassen / gesprochenes Feedback 
 * Lupenfunktion 
